@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34DDE5D22CFABED900F17322 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DDE5D12CFABED900F17322 /* CustomModifiers.swift */; };
 		CFBE9BB42591283700E7F180 /* NotasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE9BB32591283700E7F180 /* NotasApp.swift */; };
 		CFBE9BB82591283800E7F180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBE9BB72591283800E7F180 /* Assets.xcassets */; };
 		CFBE9BBB2591283800E7F180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBE9BBA2591283800E7F180 /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34DDE5D12CFABED900F17322 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		CFBE9BB02591283700E7F180 /* Notas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBE9BB32591283700E7F180 /* NotasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotasApp.swift; sourceTree = "<group>"; };
 		CFBE9BB72591283800E7F180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,6 +43,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34DDE5CC2CFABD2C00F17322 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CFBE9BC82591288B00E7F180 /* ViewModel */,
+				CFBE9BCD2591289E00E7F180 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		34DDE5CD2CFABDA700F17322 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				34DDE5D02CFABDDE00F17322 /* Setting */,
+				34DDE5D12CFABED900F17322 /* CustomModifiers.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		34DDE5CE2CFABDB700F17322 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CFBE9BB32591283700E7F180 /* NotasApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		34DDE5CF2CFABDD100F17322 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFBE9BB72591283800E7F180 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		34DDE5D02CFABDDE00F17322 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CFBE9BBC2591283800E7F180 /* Persistence.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		CFBE9BA72591283700E7F180 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +104,10 @@
 		CFBE9BB22591283700E7F180 /* Notas */ = {
 			isa = PBXGroup;
 			children = (
-				CFBE9BCD2591289E00E7F180 /* View */,
-				CFBE9BC82591288B00E7F180 /* ViewModel */,
-				CFBE9BB32591283700E7F180 /* NotasApp.swift */,
-				CFBE9BB72591283800E7F180 /* Assets.xcassets */,
-				CFBE9BBC2591283800E7F180 /* Persistence.swift */,
+				34DDE5CF2CFABDD100F17322 /* SupportingFiles */,
+				34DDE5CE2CFABDB700F17322 /* Main */,
+				34DDE5CC2CFABD2C00F17322 /* Home */,
+				34DDE5CD2CFABDA700F17322 /* UI */,
 				CFBE9BC12591283800E7F180 /* Info.plist */,
 				CFBE9BBE2591283800E7F180 /* Notas.xcdatamodeld */,
 				CFBE9BB92591283800E7F180 /* Preview Content */,
@@ -171,6 +214,7 @@
 				CFBE9BB42591283700E7F180 /* NotasApp.swift in Sources */,
 				CFBE9BD825912E4B00E7F180 /* Home.swift in Sources */,
 				CFBE9BC02591283800E7F180 /* Notas.xcdatamodeld in Sources */,
+				34DDE5D22CFABED900F17322 /* CustomModifiers.swift in Sources */,
 				CFBE9BDB25912E5E00E7F180 /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +348,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Notas/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,7 +370,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Notas/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

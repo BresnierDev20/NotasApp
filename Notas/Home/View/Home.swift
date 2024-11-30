@@ -25,8 +25,7 @@ struct Home: View {
                         Spacer()
                         
                         Text("Notas Vacias")
-                            .font(.largeTitle)
-                            .bold()
+                            .estiloTexto(font: .largeTitle, color: .black, fontWeight: .bold)
                         
                         Text("Agrega una nota")
                             .font(.headline)
@@ -39,9 +38,10 @@ struct Home: View {
                         ForEach(results){ item in
                             VStack(alignment: .leading){
                                 Text(item.nota ?? "Sin nota")
-                                    .font(.title)
-                                    .bold()
+                                    .estiloTexto(font: .title, color: .black, fontWeight: .bold)
+                                
                                 Text(item.fecha ?? Date(), style: .date)
+                                
                             }.contextMenu(ContextMenu(menuItems: {
                                 Button(action:{
                                     model.sendData(item: item)
@@ -69,13 +69,13 @@ struct Home: View {
             }
             .navigationBarTitle("Notas")
             .navigationBarItems(trailing:
-                                    Button(action:{
-                                        model.show.toggle()
-                                    }){
-                                        Image(systemName: "plus")
-                                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                                    }
+                Button(action:{
+                    model.show.toggle()
+                }){
+                    Image(systemName: "plus")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                }
             ).sheet(isPresented: $model.show, content: {
                 AddView(model: model)
             })

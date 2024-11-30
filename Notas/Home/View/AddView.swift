@@ -15,8 +15,7 @@ struct AddView: View {
     var body: some View {
         VStack{
             Text(model.updateItem != nil ? "Editar nota" : "Agregar nota")
-                .font(.largeTitle)
-                .bold()
+                .estiloTexto(font: .largeTitle, color: .black, fontWeight: .bold)
             Spacer()
             TextEditor(text: $model.nota)
             Divider()
@@ -33,7 +32,8 @@ struct AddView: View {
                     title: { Text("Guardar").foregroundColor(.white).bold() },
                     icon: { Image(systemName: "plus").foregroundColor(.white) }
                 )
-            }.padding()
+            }
+            .padding()
             .frame(width: UIScreen.main.bounds.width - 30)
             .background(model.nota == "" ? Color.gray : Color.blue)
             .cornerRadius(8)
