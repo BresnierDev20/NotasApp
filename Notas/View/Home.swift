@@ -18,34 +18,53 @@ struct Home: View {
 //                  animation: .spring()) var results : FetchedResults<Notas>
     
     var body: some View {
-        NavigationView{
-            List{
-                ForEach(results){ item in
-                    VStack(alignment: .leading){
-                        Text(item.nota ?? "Sin nota")
-                            .font(.title)
+        NavigationView {
+            VStack {
+                if results.isEmpty {
+                    VStack {
+                        Spacer()
+                        
+                        Text("Notas Vacias")
+                            .font(.largeTitle)
                             .bold()
-                        Text(item.fecha ?? Date(), style: .date)
-                    }.contextMenu(ContextMenu(menuItems: {
-                        Button(action:{
-                            model.sendData(item: item)
-                        }){
-                            Label(title:{
-                                Text("Editar")
-                            }, icon:{
-                                Image(systemName: "pencil")
-                            })
+                        
+                        Text("Agrega una nota")
+                            .font(.headline)
+                            .fontWeight(.light)
+                        
+                        Spacer()
+                    }
+                }else {
+                    List{
+                        ForEach(results){ item in
+                            VStack(alignment: .leading){
+                                Text(item.nota ?? "Sin nota")
+                                    .font(.title)
+                                    .bold()
+                                Text(item.fecha ?? Date(), style: .date)
+                            }.contextMenu(ContextMenu(menuItems: {
+                                Button(action:{
+                                    model.sendData(item: item)
+                                }){
+                                    Label(title:{
+                                        Text("Editar")
+                                    }, icon:{
+                                        Image(systemName: "pencil")
+                                    })
+                                }
+                                Button(action:{
+                                    model.deleteData(item: item, context: context)
+                                }){
+                                    Label(title:{
+                                        Text("Eliminar")
+                                    }, icon:{
+                                        Image(systemName: "trash")
+                                    })
+                                }
+                            }))
                         }
-                        Button(action:{
-                            model.deleteData(item: item, context: context)
-                        }){
-                            Label(title:{
-                                Text("Eliminar")
-                            }, icon:{
-                                Image(systemName: "trash")
-                            })
-                        }
-                    }))
+                    }
+                   
                 }
             }
             .navigationBarTitle("Notas")
@@ -63,5 +82,3 @@ struct Home: View {
         }
     }
 }
-
-
